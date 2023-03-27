@@ -1,0 +1,7 @@
+Descriptor-Version: 1.0
+Created-By: pegasus-core-maven-plugin-1.0.0-SNAPSHOT
+Issuer: Gtech
+Plugin-Title: garganttua-server-plugin-core-context-engine
+Plugin-Version: 1.0.0-SNAPSHOT
+Required-Plugins: 
+Required-Libs: com.jayway.jsonpath:json-path:2.7.0;net.minidev:json-smart:2.4.7;net.minidev:accessors-smart:2.4.7;org.ow2.asm:asm:9.1;javax.ws.rs:javax.ws.rs-api:2.1.1;com.fasterxml.jackson.core:jackson-databind:2.13.3;com.fasterxml.jackson.core:jackson-annotations:2.13.3;com.fasterxml.jackson.core:jackson-core:2.13.3;org.javassist:javassist:3.26.0-GA

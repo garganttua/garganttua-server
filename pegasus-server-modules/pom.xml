@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.gtech</groupId>
+    <artifactId>pegasus-server</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <packaging>pom</packaging>
+  <artifactId>pegasus-server-modules</artifactId>
+  <modules>
+  	<module>pegasus-server-module-bootstrap</module>
+  	<module>pegasus-server-module-spring</module>
+  	<module>pegasus-server-module-console</module>
+  	<module>pegasus-server-module-api</module>
+  	<module>pegasus-server-module-security</module>
+<!--  	<module>pegasus-server-module-maven-plugin</module>-->
+  	<module>pegasus-server-module-configuration</module>
+  	<module>pegasus-server-module-sshd</module>
+  	<module>pegasus-server-module-asciitable</module>
+  	<module>pegasus-server-module-services</module>
+  </modules>
+</project>

@@ -1,0 +1,104 @@
+{
+	"tenantId": "1",
+	"clusterId": "1",
+	
+	"topics": 
+	[
+	{
+		"ref":"/events"
+	},
+	{
+		"ref":"/signup"
+	}
+	],
+	"dataflows": 
+	[
+	{
+		"uuid": "24abfe2c-7707-4b2e-81e8-0ac2912c035a",
+		"name": "events",
+		"type": "events",
+		"garanteeOrder": "false",
+		"version": "1.0",
+		"encapsulated": "true"
+	},
+	{
+		"uuid": "1d6241fa-f3d5-4f07-b149-16c285e5e0c3",
+		"name": "signup",
+		"type": "signup",
+		"garanteeOrder": "false",
+		"version": "1.0",
+		"encapsulated": "true"
+	}
+	],
+	"subscriptions": 
+	[
+	{
+		"dataflow": "24abfe2c-7707-4b2e-81e8-0ac2912c035a",
+		"topic": "/events",
+		"connector": "kafka",
+		"publicationMode": "ON_CHANGE",
+		"buffered": "false",
+		"bufferPersisted": "false",
+		"consumerConfiguration": 
+		{
+			"inClusterProcessingMode": "EVERYBODY",
+			"originPolicy": "FROM_ANY",
+			"destinationPolicy": "TO_ANY",
+			"tenantPartioningPolicy": "NOT_PARTITIONED",
+			"ignoreAssetMessages": "false"
+		},
+		"producerConfiguration": 
+		{
+			"destinationPolicy": "TO_ANY"
+		}
+	},
+	{
+		"dataflow": "1d6241fa-f3d5-4f07-b149-16c285e5e0c3",
+		"topic": "/signup",
+		"connector": "kafka",
+		"publicationMode": "ON_CHANGE",
+		"buffered": "false",
+		"bufferPersisted": "false",
+		"producerConfiguration": 
+		{
+			"destinationPolicy": "TO_ANY"
+		},
+		"consumerConfiguration": 
+		{
+			"inClusterProcessingMode": "ONLY_ONE_CLUSTER_NODE",
+			"highAvailabilityMode": "LOAD_BALANCED",
+			"originPolicy": "FROM_ANY",
+			"destinationPolicy": "TO_ANY",
+			"tenantPartioningPolicy": "NOT_PARTITIONED",
+			"ignoreAssetMessages": "false"
+		}
+	}
+	],
+	"connectors": 
+	[
+	{
+		"name": "kafka",
+		"type": "kafka",
+		"version": "1.0.0",
+		"configuration": "url=localhost:9092&maxPollRecords=1&enableAutoCommit=true&autoOffsetReset=latest&partitionsAutoScalling=true&allowAutoCreateTopics=true"
+	}
+	],
+	"routes": 
+	[
+	{
+		"uuid": "2d6f75e0-825c-47f5-8595-f0e7c7270e5a",
+		"from": "kafka://24abfe2c-7707-4b2e-81e8-0ac2912c035a/events",
+		"processors": 
+		{
+			"1": 
+			{
+				"uuid":"2d6f75e0-825c-47f5-8595-f0e7c7270e5a-1",
+				"type": "log",
+				"version": "1.0.0",
+				"configuration": "level=INFO"
+			}
+		},
+		"to": "kafka://1d6241fa-f3d5-4f07-b149-16c285e5e0c3/signup"	
+	}
+	]
+}

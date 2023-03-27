@@ -1,0 +1,111 @@
+<!-- Copyright (c) 2022 Jérémy COLOMBET -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gtech</groupId>
+	<version>1.0.0-SNAPSHOT</version>
+	<artifactId>pegasus-server</artifactId>
+	<packaging>pom</packaging>
+	
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Jérémy Colombet</name>
+			<email>jeremy.colombet@garganttua.com</email>
+		</developer>
+	</developers>
+	
+	<distributionManagement>
+		<snapshotRepository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/garganttua/pegasus-server</url>
+		</snapshotRepository>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/garganttua/pegasus-server</url>
+		</repository>
+	</distributionManagement>
+	
+	<repositories>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/garganttua/pegasus-core</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>Github plugins 1</id>
+			<url>https://maven.pkg.github.com/garganttua/pegasus-server-distribution-maker</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>Github plugins 2</id>
+			<url>https://maven.pkg.github.com/garganttua/pegasus-server-plugin-maker</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+			<version>1.18.24</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.update4j</groupId>
+			<artifactId>update4j</artifactId>
+			<version>1.5.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.13.3</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>18</source>
+					<target>18</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>pegasus-server-modules</module>
+		<module>pegasus-server-bundle</module>
+	</modules>
+</project>
