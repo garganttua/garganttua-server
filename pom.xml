@@ -37,15 +37,15 @@
 	
 	<repositories>
 		<repository>
-			<id>Github</id>
-			<name>GitHub Packages</name>
+			<id>github pegasus core</id>
+			<name>github pegasus core</name>
 			<url>https://maven.pkg.github.com/garganttua/pegasus-core</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
 		<repository>
-			<id>Github plugins 1</id>
+			<id>github pegasus distribution maker</id>
 			<url>https://maven.pkg.github.com/garganttua/pegasus-server-distribution-maker</url>
 			<layout>default</layout>
 			<snapshots>
@@ -53,7 +53,7 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>Github plugins 2</id>
+			<id>github pegasus server plugin maker</id>
 			<url>https://maven.pkg.github.com/garganttua/pegasus-server-plugin-maker</url>
 			<layout>default</layout>
 			<snapshots>
@@ -64,7 +64,7 @@
 
 	<pluginRepositories>
 		<pluginRepository>
-			<id>Github plugins 1</id>
+			<id>github pegasus distribution maker</id>
 			<url>https://maven.pkg.github.com/garganttua/pegasus-server-distribution-maker</url>
 			<layout>default</layout>
 			<snapshots>
@@ -72,7 +72,7 @@
 			</snapshots>
 		</pluginRepository>
 		<pluginRepository>
-			<id>Github plugins 2</id>
+			<id>github pegasus server plugin maker</id>
 			<url>https://maven.pkg.github.com/garganttua/pegasus-server-plugin-maker</url>
 			<layout>default</layout>
 			<snapshots>
@@ -121,6 +121,6 @@
 
 	<modules>
 		<module>pegasus-server-modules</module>
-		<!--<module>pegasus-server-bundle</module>-->
+		<module>pegasus-server-bundle</module>
 	</modules>
 </project>
