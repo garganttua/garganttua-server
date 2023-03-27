@@ -37,9 +37,25 @@
 	
 	<repositories>
 		<repository>
-			<id>github</id>
+			<id>Github</id>
 			<name>GitHub Packages</name>
 			<url>https://maven.pkg.github.com/garganttua/pegasus-core</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>Github plugins 1</id>
+			<url>https://maven.pkg.github.com/garganttua/pegasus-server-distribution-maker</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>Github plugins 2</id>
+			<url>https://maven.pkg.github.com/garganttua/pegasus-server-plugin-maker</url>
+			<layout>default</layout>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
@@ -83,7 +99,6 @@
 			<artifactId>update4j</artifactId>
 			<version>1.5.9</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -106,6 +121,6 @@
 
 	<modules>
 		<module>pegasus-server-modules</module>
-		<module>pegasus-server-bundle</module>
+		<!--<module>pegasus-server-bundle</module>-->
 	</modules>
 </project>
