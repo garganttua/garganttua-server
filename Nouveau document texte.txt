@@ -1,7 +1,1 @@
-java '-Djava.system.class.loader=org.update4j.DynamicClassLoader' -jar .\bin\pegasus-server-module-bootstrap-1.0.0-SNAPSHOT.jar -manifest .\conf\pegasus-server-manifest.ggm -deploy .\deploy\ -tmp .\tmp\ -banner pegasus-server-banner.txt
-
-
-java -Djava.system.class.loader=org.update4j.DynamicClassLoader -jar .\bin\pegasus-server-module-bootstrap-1.0.0-SNAPSHOT.jar -manifest .\conf\pegasus-server-manifest.ggm -deploy .\deploy\ -tmp .\tmp\ -banner pegasus-server-banner.txt
-
-
-java -Djava.system.class.loader=org.update4j.DynamicClassLoader -jar .\bin\pegasus-server-module-bootstrap-1.0.0-SNAPSHOT.jar -manifest .\conf\pegasus-server-manifest.ggm -deploy .\deploy\ -tmp .\tmp\ -banner pegasus-server-banner.txt -confExt properties,ggc
+java -Djava.system.class.loader=org.update4j.DynamicClassLoader -jar .\bin\pegasus-server-module-bootstrap-1.0.0-SNAPSHOT.jar -manifest .\conf\pegasus-server-manifest.pem -deploy .\deploy\ -tmp .\tmp\ -banner pegasus-server-banner.txt -confExt properties,ggc

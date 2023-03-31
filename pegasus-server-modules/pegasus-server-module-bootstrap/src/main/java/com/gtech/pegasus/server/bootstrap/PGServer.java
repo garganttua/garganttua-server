@@ -41,7 +41,7 @@ public class PGServer {
 	private static String bannerFile;
 	private static String launcherClass;
 	
-	public static void main(String[] args) throws PGServerException, PGApplicationException, PGApplicationEngineException, IOException, ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException, PGApplicationDeploymentManagerException, CloneNotSupportedException, InterruptedException, PGServiceException {
+	public static void main(String[] args) throws PGServerException, PGApplicationException, PGApplicationEngineException, IOException, ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalStateException,IllegalAccessException, PGApplicationDeploymentManagerException, CloneNotSupportedException, InterruptedException, PGServiceException {
 	
 		/*
 		 * PARSING COMMAND LINE ARGUMENTS
