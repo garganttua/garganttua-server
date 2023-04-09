@@ -48,20 +48,9 @@
 			<type>zip</type>
 		</dependency>
 		<dependency>
-			<groupId>org.javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>3.26.0-GA</version>
-		</dependency>
-		<dependency>
-			<groupId>com.gtech</groupId>
-			<artifactId>pegasus-server-distribution-maker</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-			<type>maven-plugin</type>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty.toolchain</groupId>
-			<artifactId>jetty-servlet-api</artifactId>
-			<version>4.0.6</version>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
 		</dependency>
 	</dependencies>
 
@@ -81,11 +70,11 @@
 						com.gtech.pegasus.server.module.spring.PGServerSpringContext
 					</mainClass>
 					<dependencies>
-						<dependency>
-							<groupId>org.eclipse.jetty.toolchain</groupId>
-							<artifactId>jetty-servlet-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
+<dependency>
+    <groupId>commons-logging</groupId>
+    <artifactId>commons-logging</artifactId>
+    <dest>libs</dest>
+</dependency>
 						<dependency>
 							<groupId>com.gtech</groupId>
 							<artifactId>pegasus-server-module-bootstrap</artifactId>
@@ -94,6 +83,11 @@
 						<dependency>
 							<groupId>com.gtech</groupId>
 							<artifactId>pegasus-core</artifactId>
+							<dest>binlibs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.update4j</groupId>
+							<artifactId>update4j</artifactId>
 							<dest>binlibs</dest>
 						</dependency>
 						<dependency>
@@ -107,6 +101,11 @@
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
+							<groupId>com.gtech</groupId>
+							<artifactId>pegasus-server-module-spring-repacked</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
 							<groupId>org.springframework.boot</groupId>
 							<artifactId>spring-boot-starter</artifactId>
 							<dest>libs</dest>
@@ -114,6 +113,11 @@
 						<dependency>
 							<groupId>org.springframework.boot</groupId>
 							<artifactId>spring-boot</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework</groupId>
+							<artifactId>spring-context</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
@@ -129,26 +133,31 @@
 						<dependency>
 							<groupId>ch.qos.logback</groupId>
 							<artifactId>logback-classic</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>ch.qos.logback</groupId>
 							<artifactId>logback-core</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.logging.log4j</groupId>
 							<artifactId>log4j-to-slf4j</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.logging.log4j</groupId>
 							<artifactId>log4j-api</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.slf4j</groupId>
 							<artifactId>jul-to-slf4j</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>jakarta.annotation</groupId>
+							<artifactId>jakarta.annotation-api</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
@@ -159,16 +168,51 @@
 						<dependency>
 							<groupId>org.springframework</groupId>
 							<artifactId>spring-jcl</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.yaml</groupId>
 							<artifactId>snakeyaml</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-starter-security</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>javax.inject</groupId>
-							<artifactId>javax.inject</artifactId>
+							<groupId>org.springframework</groupId>
+							<artifactId>spring-aop</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework</groupId>
+							<artifactId>spring-beans</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework.security</groupId>
+							<artifactId>spring-security-config</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework.security</groupId>
+							<artifactId>spring-security-core</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework.security</groupId>
+							<artifactId>spring-security-crypto</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework.security</groupId>
+							<artifactId>spring-security-web</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework</groupId>
+							<artifactId>spring-expression</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
@@ -179,6 +223,21 @@
 						<dependency>
 							<groupId>org.springframework.boot</groupId>
 							<artifactId>spring-boot-starter-json</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.fasterxml.jackson.core</groupId>
+							<artifactId>jackson-databind</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.fasterxml.jackson.core</groupId>
+							<artifactId>jackson-annotations</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.fasterxml.jackson.core</groupId>
+							<artifactId>jackson-core</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
@@ -197,33 +256,13 @@
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-web</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-webmvc</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
 							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-jetty</artifactId>
+							<artifactId>spring-boot-starter-tomcat</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>jakarta.servlet</groupId>
-							<artifactId>jakarta.servlet-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>jakarta.websocket</groupId>
-							<artifactId>jakarta.websocket-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>jakarta.websocket</groupId>
-							<artifactId>jakarta.websocket-client-api</artifactId>
+							<groupId>org.apache.tomcat.embed</groupId>
+							<artifactId>tomcat-embed-core</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
@@ -232,143 +271,18 @@
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-servlets</artifactId>
+							<groupId>org.apache.tomcat.embed</groupId>
+							<artifactId>tomcat-embed-websocket</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-http</artifactId>
+							<groupId>org.springframework</groupId>
+							<artifactId>spring-web</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-util</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-io</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-webapp</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-servlet</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-security</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-server</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-xml</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-jakarta-server</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-jakarta-client</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-jakarta-common</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-core-client</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-client</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-alpn-client</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-servlet</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-core-server</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-annotations</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-plus</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>jakarta.transaction</groupId>
-							<artifactId>jakarta.transaction-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty</groupId>
-							<artifactId>jetty-jndi</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.ow2.asm</groupId>
-							<artifactId>asm</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.ow2.asm</groupId>
-							<artifactId>asm-commons</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.ow2.asm</groupId>
-							<artifactId>asm-tree</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-jetty-server</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-jetty-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-jetty-common</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.websocket</groupId>
-							<artifactId>websocket-core-common</artifactId>
+							<groupId>org.springframework</groupId>
+							<artifactId>spring-webmvc</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
@@ -404,12 +318,27 @@
 						<dependency>
 							<groupId>org.hdrhistogram</groupId>
 							<artifactId>HdrHistogram</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.latencyutils</groupId>
 							<artifactId>LatencyUtils</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-api</artifactId>
 							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-simple</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>com.gtech</groupId>
@@ -442,61 +371,6 @@
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-security</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-aop</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework.security</groupId>
-							<artifactId>spring-security-config</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework.security</groupId>
-							<artifactId>spring-security-core</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework.security</groupId>
-							<artifactId>spring-security-crypto</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework.security</groupId>
-							<artifactId>spring-security-web</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-starter-thymeleaf</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.thymeleaf</groupId>
-							<artifactId>thymeleaf-spring6</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.thymeleaf</groupId>
-							<artifactId>thymeleaf</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.attoparser</groupId>
-							<artifactId>attoparser</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.unbescape</groupId>
-							<artifactId>unbescape</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
 							<groupId>com.gtech</groupId>
 							<artifactId>pegasus-server-module-sshd</artifactId>
 							<dest>libs</dest>
@@ -504,348 +378,80 @@
 						<dependency>
 							<groupId>org.apache.sshd</groupId>
 							<artifactId>sshd-sftp</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.sshd</groupId>
 							<artifactId>sshd-core</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.sshd</groupId>
 							<artifactId>sshd-common</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.slf4j</groupId>
 							<artifactId>jcl-over-slf4j</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.sshd</groupId>
 							<artifactId>sshd-scp</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>com.gtech</groupId>
 							<artifactId>pegasus-server-module-asciitable</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>de.vandermeer</groupId>
 							<artifactId>asciitable</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>de.vandermeer</groupId>
 							<artifactId>ascii-utf-themes</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>de.vandermeer</groupId>
 							<artifactId>skb-interfaces</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.commons</groupId>
+							<artifactId>commons-lang3</artifactId>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.antlr</groupId>
 							<artifactId>ST4</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.antlr</groupId>
 							<artifactId>antlr-runtime</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.antlr</groupId>
 							<artifactId>antlr4</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>de.vandermeer</groupId>
 							<artifactId>char-translation</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>com.gtech</groupId>
 							<artifactId>pegasus-server-module-configuration</artifactId>
 							<dest>conf</dest>
 						</dependency>
-						<dependency>
-							<groupId>org.javassist</groupId>
-							<artifactId>javassist</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-server-distribution-maker</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>net.lingala.zip4j</groupId>
-							<artifactId>zip4j</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-core</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-model</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-settings</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-settings-builder</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.codehaus.plexus</groupId>
-							<artifactId>plexus-sec-dispatcher</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.codehaus.plexus</groupId>
-							<artifactId>plexus-cipher</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-builder-support</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-repository-metadata</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-artifact</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-plugin-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-model-builder</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven</groupId>
-							<artifactId>maven-resolver-provider</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven.resolver</groupId>
-							<artifactId>maven-resolver-impl</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven.resolver</groupId>
-							<artifactId>maven-resolver-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven.resolver</groupId>
-							<artifactId>maven-resolver-spi</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven.resolver</groupId>
-							<artifactId>maven-resolver-util</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.maven.shared</groupId>
-							<artifactId>maven-shared-utils</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>commons-io</groupId>
-							<artifactId>commons-io</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.sisu</groupId>
-							<artifactId>org.eclipse.sisu.plexus</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>javax.annotation</groupId>
-							<artifactId>javax.annotation-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.sisu</groupId>
-							<artifactId>org.eclipse.sisu.inject</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.google.inject</groupId>
-							<artifactId>guice</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>aopalliance</groupId>
-							<artifactId>aopalliance</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.google.guava</groupId>
-							<artifactId>guava</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.google.code.findbugs</groupId>
-							<artifactId>jsr305</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.checkerframework</groupId>
-							<artifactId>checker-compat-qual</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.google.errorprone</groupId>
-							<artifactId>error_prone_annotations</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.google.j2objc</groupId>
-							<artifactId>j2objc-annotations</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.codehaus.mojo</groupId>
-							<artifactId>animal-sniffer-annotations</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.codehaus.plexus</groupId>
-							<artifactId>plexus-utils</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.codehaus.plexus</groupId>
-							<artifactId>plexus-classworlds</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.codehaus.plexus</groupId>
-							<artifactId>plexus-interpolation</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.codehaus.plexus</groupId>
-							<artifactId>plexus-component-annotations</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.commons</groupId>
-							<artifactId>commons-lang3</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.eclipse.jetty.toolchain</groupId>
-							<artifactId>jetty-jakarta-websocket-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework.experimental</groupId>
-							<artifactId>spring-aot</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework.experimental</groupId>
-							<artifactId>spring-native</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-context</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-beans</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-expression</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.springframework.boot</groupId>
-							<artifactId>spring-boot-loader-tools</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.commons</groupId>
-							<artifactId>commons-compress</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.squareup</groupId>
-							<artifactId>javapoet</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>info.picocli</groupId>
-							<artifactId>picocli</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>jakarta.annotation</groupId>
-							<artifactId>jakarta.annotation-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>net.bytebuddy</groupId>
-							<artifactId>byte-buddy</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.update4j</groupId>
-							<artifactId>update4j</artifactId>
-							<dest>binlibs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.fasterxml.jackson.core</groupId>
-							<artifactId>jackson-databind</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.fasterxml.jackson.core</groupId>
-							<artifactId>jackson-annotations</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>com.fasterxml.jackson.core</groupId>
-							<artifactId>jackson-core</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.slf4j</groupId>
-							<artifactId>slf4j-api</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.slf4j</groupId>
-							<artifactId>slf4j-simple</artifactId>
-							<dest>libs</dest>
-						</dependency>
+
+
 					</dependencies>
 
 				</configuration>

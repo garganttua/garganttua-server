@@ -32,6 +32,19 @@
 			<artifactId>pegasus-server-module-bootstrap</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -64,10 +77,12 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/classes/META-INF</outputDirectory>
+							<outputDirectory>
+								${project.build.directory}/classes/META-INF</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.basedir}/src/main/resources</directory>
+									<directory>
+										${project.basedir}/src/main/resources</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
