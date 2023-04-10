@@ -18,6 +18,6 @@
   	<module>pegasus-server-module-sshd</module>
   	<module>pegasus-server-module-asciitable</module>
   	<module>pegasus-server-module-services</module>
-  	<module>pegasus-server-module-spring-repacked</module>
+<!--  	<module>pegasus-server-module-spring-repacked</module>-->
   </modules>
 </project>
