@@ -9,7 +9,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
 
-//@Component
+@Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
     @Override

@@ -1,5 +1,6 @@
 package com.gtech.pegasus.server.module.console;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 public class SshConsole /*extends WebSecurityConfigurerAdapter*/  {
 	
 	
-//	@Autowired
+	@Autowired
     private CustomAuthenticationProvider authProvider;
 
 //    @Override

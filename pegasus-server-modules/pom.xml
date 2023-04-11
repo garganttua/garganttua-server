@@ -15,8 +15,8 @@
   	<module>pegasus-server-module-security</module>
 <!--  	<module>pegasus-server-module-maven-plugin</module>-->
   	<module>pegasus-server-module-configuration</module>
-  	<module>pegasus-server-module-sshd</module>
-  	<module>pegasus-server-module-asciitable</module>
+<!--  	<module>pegasus-server-module-sshd</module>-->
+<!--  	<module>pegasus-server-module-asciitable</module>-->
   	<module>pegasus-server-module-services</module>
 <!--  	<module>pegasus-server-module-spring-repacked</module>-->
   </modules>
