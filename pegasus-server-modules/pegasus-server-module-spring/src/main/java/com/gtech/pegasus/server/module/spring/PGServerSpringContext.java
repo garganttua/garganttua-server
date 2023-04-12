@@ -8,6 +8,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.catalina.webresources.TomcatURLStreamHandlerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.Banner;
 import org.springframework.boot.ExitCodeGenerator;
@@ -61,6 +62,8 @@ public class PGServerSpringContext implements WebMvcConfigurer, IPGService {
 		PGServerSpringContext context = new PGServerSpringContext();
 		
 		StringBuilder propertieFiles = new StringBuilder();
+		
+		TomcatURLStreamHandlerFactory.disable();
 		
 		boolean configArg = false;
 		for( String arg: args ) {
