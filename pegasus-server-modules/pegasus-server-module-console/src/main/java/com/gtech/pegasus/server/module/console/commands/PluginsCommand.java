@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.gtech.pegasus.core.deployment.artefacts.PGApplicationPlugin;
-import com.gtech.pegasus.core.deployment.artefacts.PGApplicationPluginInfos;
-import com.gtech.pegasus.core.exceptions.PGApplicationDeploymentManagerException;
-import com.gtech.pegasus.core.exceptions.PGApplicationException;
-import com.gtech.pegasus.core.execution.IPGApplicationEngine;
+import com.garganttua.server.core.deployment.artefacts.PGApplicationPlugin;
+import com.garganttua.server.core.deployment.artefacts.PGApplicationPluginInfos;
+import com.garganttua.server.core.exceptions.PGApplicationDeploymentManagerException;
+import com.garganttua.server.core.exceptions.PGApplicationException;
+import com.garganttua.server.core.execution.IPGApplicationEngine;
 import com.gtech.pegasus.server.module.console.tables.TableUtils;
 
 import sshd.shell.springboot.autoconfiguration.SshdShellCommand;

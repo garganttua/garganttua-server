@@ -13,16 +13,16 @@ import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 
-import com.gtech.pegasus.core.deployment.artefacts.PGApplicationConfiguration;
-import com.gtech.pegasus.core.deployment.artefacts.PGApplicationManifest;
-import com.gtech.pegasus.core.exceptions.PGApplicationDeploymentManagerException;
-import com.gtech.pegasus.core.exceptions.PGApplicationEngineException;
-import com.gtech.pegasus.core.exceptions.PGApplicationException;
-import com.gtech.pegasus.core.execution.PGApplicationEngine;
-import com.gtech.pegasus.core.execution.PGAssetManifest;
-import com.gtech.pegasus.core.services.PGServiceCommandRight;
-import com.gtech.pegasus.core.services.PGServiceException;
-import com.gtech.pegasus.core.update.PGApplicationDeploymentManager;
+import com.garganttua.server.core.deployment.artefacts.PGApplicationConfiguration;
+import com.garganttua.server.core.deployment.artefacts.PGApplicationManifest;
+import com.garganttua.server.core.exceptions.PGApplicationDeploymentManagerException;
+import com.garganttua.server.core.exceptions.PGApplicationEngineException;
+import com.garganttua.server.core.exceptions.PGApplicationException;
+import com.garganttua.server.core.execution.PGApplicationEngine;
+import com.garganttua.server.core.execution.PGAssetManifest;
+import com.garganttua.server.core.services.PGServiceCommandRight;
+import com.garganttua.server.core.services.PGServiceException;
+import com.garganttua.server.core.update.PGApplicationDeploymentManager;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
-import com.gtech.pegasus.core.services.IPGService;
-import com.gtech.pegasus.core.services.PGServiceCommandRight;
-import com.gtech.pegasus.core.services.PGServiceException;
-import com.gtech.pegasus.core.services.PGServiceExceptionLabels;
-import com.gtech.pegasus.core.services.PGServicePriority;
-import com.gtech.pegasus.core.services.PGServiceStatus;
+import com.garganttua.server.core.services.IPGService;
+import com.garganttua.server.core.services.PGServiceCommandRight;
+import com.garganttua.server.core.services.PGServiceException;
+import com.garganttua.server.core.services.PGServiceExceptionLabels;
+import com.garganttua.server.core.services.PGServicePriority;
+import com.garganttua.server.core.services.PGServiceStatus;
 
 @Service
 @ComponentScan("sshd.shell.springboot")

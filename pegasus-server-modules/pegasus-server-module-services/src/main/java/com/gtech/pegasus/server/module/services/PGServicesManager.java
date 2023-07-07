@@ -9,15 +9,15 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import com.gtech.pegasus.core.execution.IPGApplicationEngine;
-import com.gtech.pegasus.core.execution.IPGApplicationEngineShutdownHandler;
-import com.gtech.pegasus.core.services.IPGService;
-import com.gtech.pegasus.core.services.IPGServicesManager;
-import com.gtech.pegasus.core.services.PGServiceCommandRight;
-import com.gtech.pegasus.core.services.PGServiceException;
-import com.gtech.pegasus.core.services.PGServiceExceptionLabels;
-import com.gtech.pegasus.core.services.PGServicePriority;
-import com.gtech.pegasus.core.services.PGServiceStatus;
+import com.garganttua.server.core.execution.IPGApplicationEngine;
+import com.garganttua.server.core.execution.IPGApplicationEngineShutdownHandler;
+import com.garganttua.server.core.services.IPGService;
+import com.garganttua.server.core.services.IPGServicesManager;
+import com.garganttua.server.core.services.PGServiceCommandRight;
+import com.garganttua.server.core.services.PGServiceException;
+import com.garganttua.server.core.services.PGServiceExceptionLabels;
+import com.garganttua.server.core.services.PGServicePriority;
+import com.garganttua.server.core.services.PGServiceStatus;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

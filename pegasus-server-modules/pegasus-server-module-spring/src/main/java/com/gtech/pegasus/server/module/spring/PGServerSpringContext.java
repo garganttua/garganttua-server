@@ -23,13 +23,13 @@ import org.springframework.web.method.HandlerTypePredicate;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.gtech.pegasus.core.execution.IPGApplicationEngine;
-import com.gtech.pegasus.core.execution.PGApplicationEngine;
-import com.gtech.pegasus.core.services.IPGService;
-import com.gtech.pegasus.core.services.PGServiceCommandRight;
-import com.gtech.pegasus.core.services.PGServiceException;
-import com.gtech.pegasus.core.services.PGServicePriority;
-import com.gtech.pegasus.core.services.PGServiceStatus;
+import com.garganttua.server.core.execution.IPGApplicationEngine;
+import com.garganttua.server.core.execution.PGApplicationEngine;
+import com.garganttua.server.core.services.IPGService;
+import com.garganttua.server.core.services.PGServiceCommandRight;
+import com.garganttua.server.core.services.PGServiceException;
+import com.garganttua.server.core.services.PGServicePriority;
+import com.garganttua.server.core.services.PGServiceStatus;
 import com.gtech.pegasus.server.bootstrap.PGServer;
 
 import lombok.extern.slf4j.Slf4j;

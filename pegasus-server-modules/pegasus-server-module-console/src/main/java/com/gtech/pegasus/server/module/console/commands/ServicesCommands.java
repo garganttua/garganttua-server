@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.gtech.pegasus.core.exceptions.PGApplicationException;
-import com.gtech.pegasus.core.services.IPGService;
-import com.gtech.pegasus.core.services.IPGServicesManager;
-import com.gtech.pegasus.core.services.PGServiceCommandRight;
-import com.gtech.pegasus.core.services.PGServiceException;
+import com.garganttua.server.core.exceptions.PGApplicationException;
+import com.garganttua.server.core.services.IPGService;
+import com.garganttua.server.core.services.IPGServicesManager;
+import com.garganttua.server.core.services.PGServiceCommandRight;
+import com.garganttua.server.core.services.PGServiceException;
 import com.gtech.pegasus.server.module.console.tables.TableUtils;
 
 import sshd.shell.springboot.autoconfiguration.SshdShellCommand;
