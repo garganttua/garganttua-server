@@ -3,48 +3,48 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.gtech</groupId>
-		<artifactId>pegasus-server</artifactId>
+		<groupId>com.garganttua</groupId>
+		<artifactId>garganttua-server</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<packaging>bundle</packaging>
-	<artifactId>pegasus-server-bundle</artifactId>
+	<artifactId>garganttua-server-bundle</artifactId>
 
 	<dependencies>
 		<dependency>
-			<artifactId>pegasus-server-module-bootstrap</artifactId>
-			<groupId>com.gtech</groupId>
+			<artifactId>garganttua-server-module-bootstrap</artifactId>
+			<groupId>com.garganttua</groupId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<artifactId>pegasus-server-module-spring</artifactId>
-			<groupId>com.gtech</groupId>
+			<artifactId>garganttua-server-module-spring</artifactId>
+			<groupId>com.garganttua</groupId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<artifactId>pegasus-server-module-console</artifactId>
-			<groupId>com.gtech</groupId>
+			<artifactId>garganttua-server-module-console</artifactId>
+			<groupId>com.garganttua</groupId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<!--		<dependency>-->
-		<!--			<artifactId>pegasus-server-module-sshd</artifactId>-->
-		<!--			<groupId>com.gtech</groupId>-->
+		<!--			<artifactId>garganttua-server-module-sshd</artifactId>-->
+		<!--			<groupId>com.garganttua</groupId>-->
 		<!--			<version>1.0.0-SNAPSHOT</version>-->
 		<!--		</dependency>-->
 		<dependency>
-			<groupId>com.gtech</groupId>
-			<artifactId>pegasus-server-module-asciitable</artifactId>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-server-module-asciitable</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<artifactId>pegasus-server-module-configuration</artifactId>
-			<groupId>com.gtech</groupId>
+			<artifactId>garganttua-server-module-configuration</artifactId>
+			<groupId>com.garganttua</groupId>
 			<version>1.0.0-SNAPSHOT</version>
 			<type>zip</type>
 		</dependency>
 		<dependency>
-			<groupId>com.gtech</groupId>
-			<artifactId>pegasus-server-module-services</artifactId>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-server-module-services</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -57,16 +57,16 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.gtech</groupId>
-				<artifactId>pegasus-server-distribution-maker</artifactId>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-distribution-maker</artifactId>
 				<version>1.0.0-SNAPSHOT</version>
 
 				<extensions>true</extensions>
 
 				<configuration>
-					<mainManifestName>pegasus-server-manifest.pem</mainManifestName>
+					<mainManifestName>garganttua-server-manifest.pem</mainManifestName>
 					<mainClass>
-						com.gtech.pegasus.server.module.spring.PGServerSpringContext
+						com.garganttua.garganttua.server.module.spring.PGServerSpringContext
 					</mainClass>
 					<dependencies>
 						<dependency>
@@ -75,18 +75,18 @@
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-server-module-services</artifactId>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-services</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-server-module-bootstrap</artifactId>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-bootstrap</artifactId>
 							<dest>bin</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-core</artifactId>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-core</artifactId>
 							<dest>binlibs</dest>
 						</dependency>
 						<dependency>
@@ -100,13 +100,13 @@
 							<dest>binlibs</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-server-module-spring</artifactId>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-spring</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-server-module-spring-repacked</artifactId>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-spring-repacked</artifactId>
 							<dest>none</dest>
 						</dependency>
 						<dependency>
@@ -345,8 +345,8 @@
 							<dest>none</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-server-module-console</artifactId>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-console</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
@@ -395,8 +395,8 @@
 							<dest>none</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-server-module-asciitable</artifactId>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-asciitable</artifactId>
 							<dest>none</dest>
 						</dependency>
 						<dependency>
@@ -440,8 +440,8 @@
 							<dest>none</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.gtech</groupId>
-							<artifactId>pegasus-server-module-configuration</artifactId>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-configuration</artifactId>
 							<dest>conf</dest>
 						</dependency>
 

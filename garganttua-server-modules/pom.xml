@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.garganttua</groupId>
+    <artifactId>garganttua-server</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <packaging>pom</packaging>
+  <artifactId>garganttua-server-modules</artifactId>
+  <modules>
+  	<module>garganttua-server-module-bootstrap</module>
+  	<module>garganttua-server-module-spring</module>
+  	<module>garganttua-server-module-console</module>
+  	<module>garganttua-server-module-api</module>
+  	<module>garganttua-server-module-security</module>
+<!--  	<module>garganttua-server-module-maven-plugin</module>-->
+  	<module>garganttua-server-module-configuration</module>
+<!--  	<module>garganttua-server-module-sshd</module>-->
+<!--  	<module>garganttua-server-module-asciitable</module>-->
+  	<module>garganttua-server-module-services</module>
+<!--  	<module>garganttua-server-module-spring-repacked</module>-->
+  </modules>
+</project>

@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.gtech</groupId>
-		<artifactId>pegasus-server-modules</artifactId>
+		<groupId>com.garganttua</groupId>
+		<artifactId>garganttua-server-modules</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>pegasus-server-module-spring</artifactId>
+	<artifactId>garganttua-server-module-spring</artifactId>
 
 	<pluginRepositories>
 		<pluginRepository>
@@ -23,8 +23,8 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.gtech</groupId>
-			<artifactId>pegasus-server-module-bootstrap</artifactId>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-server-module-bootstrap</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
@@ -69,7 +69,7 @@
 			<!--				<configuration>-->
 			<!--					<fork>true</fork>-->
 			<!--
-			<mainClass>com.gtech.pegasus.server.module.spring.PGServerSpringContext</mainClass>-->
+			<mainClass>com.garganttua.garganttua.server.module.spring.PGServerSpringContext</mainClass>-->
 			<!--				</configuration>-->
 			<!--				<executions>-->
 			<!--					<execution>-->
