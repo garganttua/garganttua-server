@@ -1,4 +1,4 @@
-package com.gtech.pegasus.server.modules.sshd;
+package com.gtech.GARGANTTUA_SERVER.server.modules.sshd;
 
 public class Test {
 

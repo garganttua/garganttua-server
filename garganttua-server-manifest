@@ -4,13 +4,13 @@
 <configuration timestamp="2023-01-02T15:05:01.841524800Z">
     <base uri="${user.dir}" path="${user.dir}"/>
     <properties>
-        <property key="default.launcher.main.class" value="com.gtech.pegasus.server.module.spring.PGServerSpringContext"/>
+        <property key="default.launcher.main.class" value="com.garganttua.server.module.spring.PGServerSpringContext"/>
     </properties>
     <files>
         <file path="/libs/plexus-classworlds-2.6.0.jar" size="52873" checksum="b69ec069" classpath="true" modulepath="true"/>
         <file path="/libs/spring-boot-autoconfigure-3.0.1.jar" size="1624175" checksum="9867074c" classpath="true" modulepath="true"/>
         <file path="/libs/spring-boot-starter-thymeleaf-3.0.1.jar" size="4769" checksum="385bab3f" classpath="true" modulepath="true"/>
-        <file path="/libs/pegasus-server-module-spring-1.0.0-SNAPSHOT.jar" size="8476" checksum="b6baf777" classpath="true" modulepath="true"/>
+        <file path="/libs/garganttua-server-module-spring-1.0.0-SNAPSHOT.jar" size="8476" checksum="b6baf777" classpath="true" modulepath="true"/>
         <file path="/libs/jackson-module-parameter-names-2.14.1.jar" size="9457" checksum="b111178f" classpath="true" modulepath="true"/>
         <file path="/libs/spring-webmvc-5.3.12.jar" size="1027845" checksum="f1989d3" classpath="true" modulepath="true"/>
         <file path="/libs/checker-compat-qual-2.0.0.jar" size="31547" checksum="1b5f1e68" classpath="true" modulepath="true"/>
@@ -28,7 +28,7 @@
         <file path="/libs/spring-boot-starter-security-3.0.1.jar" size="4741" checksum="cd1ba3e5" classpath="true" modulepath="true"/>
         <file path="/libs/spring-context-5.3.12.jar" size="1268455" checksum="d7fefcc5" classpath="true" modulepath="true"/>
         <file path="/libs/spring-boot-3.0.1.jar" size="1480834" checksum="78673a6e" classpath="true" modulepath="true"/>
-        <file path="/libs/pegasus-server-module-asciitable-1.0.0-SNAPSHOT.jar" size="460092" checksum="b33142f2" classpath="true" modulepath="true"/>
+        <file path="/libs/garganttua-server-module-asciitable-1.0.0-SNAPSHOT.jar" size="460092" checksum="b33142f2" classpath="true" modulepath="true"/>
         <file path="/libs/sshd-shell-spring-boot-starter-4.3-SNAPSHOT.jar" size="101164" checksum="c3a770a1" classpath="true" modulepath="true"/>
         <file path="/libs/spring-security-core-6.0.1.jar" size="506235" checksum="bf625700" classpath="true" modulepath="true"/>
         <file path="/libs/spring-boot-actuator-3.0.1.jar" size="667466" checksum="84c8dc72" classpath="true" modulepath="true"/>
@@ -41,7 +41,7 @@
         <file path="/libs/websocket-servlet-11.0.13.jar" size="17658" checksum="b41151c6" classpath="true" modulepath="true"/>
         <file path="/libs/javassist-3.26.0-GA.jar" size="782535" checksum="7e177eed" classpath="true" modulepath="true"/>
         <file path="/libs/jetty-util-11.0.13.jar" size="568200" checksum="902c6211" classpath="true" modulepath="true"/>
-        <file path="/libs/pegasus-server-module-sshd-1.0.0-SNAPSHOT.jar" size="2114136" checksum="dcba672" classpath="true" modulepath="true"/>
+        <file path="/libs/garganttua-server-module-sshd-1.0.0-SNAPSHOT.jar" size="2114136" checksum="dcba672" classpath="true" modulepath="true"/>
         <file path="/libs/guava-25.1-android.jar" size="2591373" checksum="bb3d7077" classpath="true" modulepath="true"/>
         <file path="/libs/javax.inject-1.jar" size="2497" checksum="abe973b" classpath="true" modulepath="true"/>
         <file path="/libs/jetty-xml-11.0.13.jar" size="72316" checksum="51dd541b" classpath="true" modulepath="true"/>
@@ -79,9 +79,9 @@
         <file path="/libs/spring-boot-starter-web-3.0.1.jar" size="4803" checksum="c7bab96e" classpath="true" modulepath="true"/>
         <file path="/libs/j2objc-annotations-1.1.jar" size="8782" checksum="7d3cc875" classpath="true" modulepath="true"/>
         <file path="/libs/commons-io-2.6.jar" size="214788" checksum="d0d2fcb2" classpath="true" modulepath="true"/>
-        <file path="/conf/pegasus-server-module-configuration-1.0.0-SNAPSHOT.zip" size="915" checksum="7c367bb9"/>
+        <file path="/conf/garganttua-server-module-configuration-1.0.0-SNAPSHOT.zip" size="915" checksum="7c367bb9"/>
         <file path="/libs/jline-builtins-3.21.0.jar" size="263195" checksum="6bb40ac9" classpath="true" modulepath="true"/>
-        <file path="/libs/pegasus-server-module-console-1.0.0-SNAPSHOT.jar" size="17096" checksum="5e3b5dbd" classpath="true" modulepath="true"/>
+        <file path="/libs/garganttua-server-module-console-1.0.0-SNAPSHOT.jar" size="17096" checksum="5e3b5dbd" classpath="true" modulepath="true"/>
         <file path="/libs/spring-jcl-6.0.3.jar" size="23489" checksum="8713ad84" classpath="true" modulepath="true"/>
         <file path="/libs/jetty-servlets-11.0.13.jar" size="101079" checksum="cb50c1ca" classpath="true" modulepath="true"/>
         <file path="/libs/spring-boot-starter-3.0.1.jar" size="4767" checksum="8491a27e" classpath="true" modulepath="true"/>

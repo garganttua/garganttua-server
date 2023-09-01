@@ -11,12 +11,12 @@
 
 	<files>
 		<file>
-			<source>src/main/resources/pegasus-server.properties</source>
-			<destName>pegasus-server.properties</destName>
+			<source>src/main/resources/garganttua-server.properties</source>
+			<destName>garganttua-server.properties</destName>
 		</file>
 		<file>
-			<source>src/main/resources/pegasus-server-banner.txt</source>
-			<destName>pegasus-server-banner.txt</destName>
+			<source>src/main/resources/garganttua-server-banner.txt</source>
+			<destName>garganttua-server-banner.txt</destName>
 		</file>
 	</files>
 
