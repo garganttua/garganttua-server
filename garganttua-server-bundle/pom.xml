@@ -12,6 +12,10 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-server-distribution-maker</artifactId>
+		</dependency>
+		<dependency>
 			<artifactId>garganttua-server-module-bootstrap</artifactId>
 			<groupId>com.garganttua</groupId>
 			<version>1.0.0-SNAPSHOT</version>
@@ -28,6 +32,12 @@
 		</dependency>
 		<dependency>
 			<artifactId>garganttua-server-module-configuration</artifactId>
+			<groupId>com.garganttua</groupId>
+			<version>1.0.0-SNAPSHOT</version>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<artifactId>garganttua-server-module-scripts</artifactId>
 			<groupId>com.garganttua</groupId>
 			<version>1.0.0-SNAPSHOT</version>
 			<type>zip</type>
@@ -54,19 +64,194 @@
 				<extensions>true</extensions>
 
 				<configuration>
-					<mainManifestName>garganttua-server-manifest.pem</mainManifestName>
+					<mainManifestName>garganttua-server-manifest.ggm</mainManifestName>
 					<mainClass>
 						com.garganttua.server.modules.spring.GGServerSpringContext
 					</mainClass>
 					<dependencies>
 						<dependency>
-							<groupId>commons-logging</groupId>
-							<artifactId>commons-logging</artifactId>
-							<dest>libs</dest>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-distribution-maker</artifactId>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>com.garganttua</groupId>
-							<artifactId>garganttua-server-module-services</artifactId>
+							<artifactId>garganttua-server-core</artifactId>
+							<dest>binlibs</dest>
+						</dependency>
+						<dependency>
+							<groupId>net.lingala.zip4j</groupId>
+							<artifactId>zip4j</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-core</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-model</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-settings</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-settings-builder</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-sec-dispatcher</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-cipher</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-builder-support</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-repository-metadata</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-artifact</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-plugin-api</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-model-builder</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven</groupId>
+							<artifactId>maven-resolver-provider</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.resolver</groupId>
+							<artifactId>maven-resolver-impl</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.resolver</groupId>
+							<artifactId>maven-resolver-api</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.resolver</groupId>
+							<artifactId>maven-resolver-spi</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.resolver</groupId>
+							<artifactId>maven-resolver-util</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.maven.shared</groupId>
+							<artifactId>maven-shared-utils</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>commons-io</groupId>
+							<artifactId>commons-io</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.eclipse.sisu</groupId>
+							<artifactId>org.eclipse.sisu.plexus</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.eclipse.sisu</groupId>
+							<artifactId>org.eclipse.sisu.inject</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.google.inject</groupId>
+							<artifactId>guice</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>aopalliance</groupId>
+							<artifactId>aopalliance</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.google.guava</groupId>
+							<artifactId>guava</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.google.code.findbugs</groupId>
+							<artifactId>jsr305</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.checkerframework</groupId>
+							<artifactId>checker-compat-qual</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.google.errorprone</groupId>
+							<artifactId>error_prone_annotations</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.google.j2objc</groupId>
+							<artifactId>j2objc-annotations</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>animal-sniffer-annotations</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>javax.inject</groupId>
+							<artifactId>javax.inject</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-utils</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-classworlds</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-interpolation</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.codehaus.plexus</groupId>
+							<artifactId>plexus-component-annotations</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.commons</groupId>
+							<artifactId>commons-lang3</artifactId>
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
@@ -75,8 +260,8 @@
 							<dest>bin</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.garganttua</groupId>
-							<artifactId>garganttua-core</artifactId>
+							<groupId>commons-cli</groupId>
+							<artifactId>commons-cli</artifactId>
 							<dest>binlibs</dest>
 						</dependency>
 						<dependency>
@@ -85,9 +270,39 @@
 							<dest>binlibs</dest>
 						</dependency>
 						<dependency>
-							<groupId>commons-cli</groupId>
-							<artifactId>commons-cli</artifactId>
-							<dest>binlibs</dest>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-api</artifactId>
+							<dest>libs;binlibs</dest>
+						</dependency>
+						<dependency>
+							<groupId>ch.qos.logback</groupId>
+							<artifactId>logback-classic</artifactId>
+							<dest>libs;binlibs</dest>
+						</dependency>
+						<dependency>
+							<groupId>ch.qos.logback</groupId>
+							<artifactId>logback-core</artifactId>
+							<dest>libs;binlibs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>jul-to-slf4j</artifactId>
+							<dest>libs;binlibs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.logging.log4j</groupId>
+							<artifactId>log4j-api</artifactId>
+							<dest>libs;binlibs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.logging.log4j</groupId>
+							<artifactId>log4j-to-slf4j</artifactId>
+							<dest>libs;binlibs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-simple</artifactId>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>com.garganttua</groupId>
@@ -95,9 +310,9 @@
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.garganttua</groupId>
-							<artifactId>garganttua-server-module-spring-repacked</artifactId>
-							<dest>none</dest>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.springframework.boot</groupId>
@@ -125,31 +340,6 @@
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>ch.qos.logback</groupId>
-							<artifactId>logback-classic</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>ch.qos.logback</groupId>
-							<artifactId>logback-core</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.logging.log4j</groupId>
-							<artifactId>log4j-to-slf4j</artifactId>
-							<dest>none</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.logging.log4j</groupId>
-							<artifactId>log4j-api</artifactId>
-							<dest>none</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.slf4j</groupId>
-							<artifactId>jul-to-slf4j</artifactId>
-							<dest>none</dest>
-						</dependency>
-						<dependency>
 							<groupId>jakarta.annotation</groupId>
 							<artifactId>jakarta.annotation-api</artifactId>
 							<dest>libs</dest>
@@ -162,17 +352,17 @@
 						<dependency>
 							<groupId>org.springframework</groupId>
 							<artifactId>spring-jcl</artifactId>
-							<dest>none</dest>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.yaml</groupId>
 							<artifactId>snakeyaml</artifactId>
-							<dest>none</dest>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.springframework.boot</groupId>
 							<artifactId>spring-boot-starter-security</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.springframework</groupId>
@@ -187,22 +377,22 @@
 						<dependency>
 							<groupId>org.springframework.security</groupId>
 							<artifactId>spring-security-config</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.springframework.security</groupId>
 							<artifactId>spring-security-core</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.springframework.security</groupId>
 							<artifactId>spring-security-crypto</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.springframework.security</groupId>
 							<artifactId>spring-security-web</artifactId>
-							<dest>libs</dest>
+							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.springframework</groupId>
@@ -312,27 +502,12 @@
 						<dependency>
 							<groupId>org.hdrhistogram</groupId>
 							<artifactId>HdrHistogram</artifactId>
-							<dest>none</dest>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.latencyutils</groupId>
 							<artifactId>LatencyUtils</artifactId>
-							<dest>none</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.slf4j</groupId>
-							<artifactId>slf4j-api</artifactId>
 							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.slf4j</groupId>
-							<artifactId>slf4j-simple</artifactId>
-							<dest>none</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>com.garganttua</groupId>
@@ -340,29 +515,9 @@
 							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>org.jline</groupId>
-							<artifactId>jline-builtins</artifactId>
+							<groupId>com.github.fonimus</groupId>
+							<artifactId>ssh-shell-spring-boot-starter</artifactId>
 							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.jline</groupId>
-							<artifactId>jline-reader</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.jline</groupId>
-							<artifactId>jline-terminal</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.jline</groupId>
-							<artifactId>jline-style</artifactId>
-							<dest>libs</dest>
-						</dependency>
-						<dependency>
-							<groupId>org.apache.sshd</groupId>
-							<artifactId>sshd-sftp</artifactId>
-							<dest>none</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.apache.sshd</groupId>
@@ -380,44 +535,99 @@
 							<dest>none</dest>
 						</dependency>
 						<dependency>
-							<groupId>org.apache.sshd</groupId>
-							<artifactId>sshd-scp</artifactId>
+							<groupId>org.springframework.shell</groupId>
+							<artifactId>spring-shell-starter</artifactId>
 							<dest>none</dest>
 						</dependency>
 						<dependency>
-							<groupId>com.garganttua</groupId>
-							<artifactId>garganttua-server-module-asciitable</artifactId>
+							<groupId>org.springframework.shell</groupId>
+							<artifactId>spring-shell-autoconfigure</artifactId>
 							<dest>none</dest>
 						</dependency>
 						<dependency>
-							<groupId>de.vandermeer</groupId>
-							<artifactId>asciitable</artifactId>
+							<groupId>org.springframework.shell</groupId>
+							<artifactId>spring-shell-core</artifactId>
 							<dest>none</dest>
 						</dependency>
 						<dependency>
-							<groupId>de.vandermeer</groupId>
-							<artifactId>ascii-utf-themes</artifactId>
-							<dest>none</dest>
+							<groupId>org.springframework.boot</groupId>
+							<artifactId>spring-boot-starter-validation</artifactId>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>de.vandermeer</groupId>
-							<artifactId>skb-interfaces</artifactId>
-							<dest>none</dest>
+							<groupId>org.hibernate.validator</groupId>
+							<artifactId>hibernate-validator</artifactId>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
-							<groupId>org.apache.commons</groupId>
-							<artifactId>commons-lang3</artifactId>
-							<dest>none</dest>
+							<groupId>jakarta.validation</groupId>
+							<artifactId>jakarta.validation-api</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.jboss.logging</groupId>
+							<artifactId>jboss-logging</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.fasterxml</groupId>
+							<artifactId>classmate</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework</groupId>
+							<artifactId>spring-messaging</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.jline</groupId>
+							<artifactId>jline</artifactId>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.antlr</groupId>
 							<artifactId>ST4</artifactId>
-							<dest>none</dest>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.antlr</groupId>
 							<artifactId>antlr-runtime</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework.shell</groupId>
+							<artifactId>spring-shell-standard</artifactId>
 							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework.shell</groupId>
+							<artifactId>spring-shell-standard-commands</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>org.springframework.shell</groupId>
+							<artifactId>spring-shell-table</artifactId>
+							<dest>none</dest>
+						</dependency>
+						<dependency>
+							<groupId>javax.annotation</groupId>
+							<artifactId>javax.annotation-api</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>de.vandermeer</groupId>
+							<artifactId>asciitable</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>de.vandermeer</groupId>
+							<artifactId>ascii-utf-themes</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>de.vandermeer</groupId>
+							<artifactId>skb-interfaces</artifactId>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
 							<groupId>org.antlr</groupId>
@@ -433,6 +643,23 @@
 							<groupId>com.garganttua</groupId>
 							<artifactId>garganttua-server-module-configuration</artifactId>
 							<dest>conf</dest>
+							<unpack>true</unpack>
+						</dependency>
+						<dependency>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-scripts</artifactId>
+							<dest>bin</dest>
+							<unpack>true</unpack>
+						</dependency>
+						<dependency>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-module-services</artifactId>
+							<dest>libs</dest>
+						</dependency>
+						<dependency>
+							<groupId>commons-logging</groupId>
+							<artifactId>commons-logging</artifactId>
+							<dest>none</dest>
 						</dependency>
 
 

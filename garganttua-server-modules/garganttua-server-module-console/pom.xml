@@ -11,11 +11,11 @@
 
 	<dependencies>
 
-<!--		<dependency>-->
-<!--			<groupId>com.garganttua</groupId>-->
-<!--			<artifactId>garganttua-server-module-asciitable</artifactId>-->
-<!--			<version>1.0.0-SNAPSHOT</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>com.github.fonimus</groupId>
+			<artifactId>ssh-shell-spring-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.garganttua</groupId>
@@ -26,12 +26,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -41,155 +36,24 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-		
+
 		<dependency>
-			<groupId>org.apache.sshd</groupId>
-			<artifactId>sshd-sftp</artifactId>
-			<version>2.7.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.projectlombok</groupId>
-					<artifactId>lombok</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-databind</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-annotations</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-core</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>org.update4j</groupId>
-					<artifactId>update4j</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.jupiter</groupId>
-					<artifactId>junit-jupiter-engine</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.platform</groupId>
-					<artifactId>junit-platform-engine</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.opentest4j</groupId>
-					<artifactId>opentest4j</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.platform</groupId>
-					<artifactId>junit-platform-commons</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.jupiter</groupId>
-					<artifactId>junit-jupiter-api</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.jupiter</groupId>
-					<artifactId>junit-jupiter-api</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.apiguardian</groupId>
-					<artifactId>apiguardian-api</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
+
 		<dependency>
-			<groupId>org.apache.sshd</groupId>
-			<artifactId>sshd-scp</artifactId>
-			<version>2.7.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.projectlombok</groupId>
-					<artifactId>lombok</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-databind</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-annotations</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>com.fasterxml.jackson.core</groupId>
-					<artifactId>jackson-core</artifactId>
-				</exclusion>
-				
-				<exclusion>
-					<groupId>org.update4j</groupId>
-					<artifactId>update4j</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.jupiter</groupId>
-					<artifactId>junit-jupiter-engine</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.platform</groupId>
-					<artifactId>junit-platform-engine</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.opentest4j</groupId>
-					<artifactId>opentest4j</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.platform</groupId>
-					<artifactId>junit-platform-commons</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.jupiter</groupId>
-					<artifactId>junit-jupiter-api</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.junit.jupiter</groupId>
-					<artifactId>junit-jupiter-api</artifactId>
-				</exclusion>
-
-				<exclusion>
-					<groupId>org.apiguardian</groupId>
-					<artifactId>apiguardian-api</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>1.3.2</version>
 		</dependency>
+
 		<dependency>
-			<groupId>org.jline</groupId>
-			<artifactId>jline-builtins</artifactId>
+			<groupId>de.vandermeer</groupId>
+			<artifactId>asciitable</artifactId>
 		</dependency>
+
 	</dependencies>
-
 
 	<build>
 		<plugins>
@@ -205,7 +69,8 @@
 							<goal>unpack-dependencies</goal>
 						</goals>
 						<configuration>
-							<includes>org/apache/sshd/**/*.class</includes>
+							<includes>
+								org/apache/sshd/**/*.class,org/springframework/shell/**/*.class,template/**/*.st*,completion/**/*.st*</includes>
 							<excludes>**/*.properties</excludes>
 							<outputDirectory>${project.build.directory}/classes</outputDirectory>
 							<overWriteReleases>true</overWriteReleases>
@@ -216,6 +81,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

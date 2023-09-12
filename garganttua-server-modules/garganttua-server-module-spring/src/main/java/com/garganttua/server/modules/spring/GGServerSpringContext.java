@@ -1,5 +1,6 @@
 package com.garganttua.server.modules.spring;
 
+import java.util.Arrays;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.Banner;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -38,6 +40,7 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootApplication
 @ComponentScan({"com.garganttua"})
 @Configuration
+@EnableAutoConfiguration
 @Slf4j
 public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService {
 
@@ -60,6 +63,9 @@ public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService
 	public static void main(String[] args) throws GGServerServiceException {
 
 		GGServerSpringContext.args = args;
+		
+		log.info("Garganttua Server Spring Context using "+Arrays.toString(args));
+		
 		GGServerSpringContext context = new GGServerSpringContext();
 		
 		StringBuilder propertieFiles = new StringBuilder();
@@ -90,6 +96,8 @@ public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService
 		} else {
 			propertieFiles__ = propertieFiles.toString();
 		}
+		
+		log.info("Using spring.config.location "+propertieFiles__);
 		
 		System.setProperty("spring.config.location", propertieFiles__);
 	
@@ -123,8 +131,8 @@ public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService
 	}
 	
 	@Bean
-	@Qualifier(value="GARGANTTUA_SERVEREngine")
-	public IGGServerApplicationEngine GARGANTTUA_SERVEREngine() {
+	@Qualifier(value="garganttuaServerEngine")
+	public IGGServerApplicationEngine garganttuaServerEngine() {
 		return GGServer.engine;
 	}
 	
@@ -166,7 +174,7 @@ public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService
 	@Qualifier(value="packages")
 	public String[] getpackages() {
 		String[] packages = new String[1];
-		packages[0] = "com.gtech";
+		packages[0] = "com.garganttua";
 		return packages;
 	}
 
@@ -175,11 +183,10 @@ public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService
 		log.info("Starting Garganttua Server Spring Context");
 		GGServerSpringContext.status = GGServerServiceStatus.starting;
 		GGServerSpringContext.application = new SpringApplication(GGServerSpringContext.class);
-		GGServerSpringContext.application.setBannerMode(Banner.Mode.OFF);
+		GGServerSpringContext.application.setBannerMode(Banner.Mode.CONSOLE);
 		
 		GGServerSpringContext.context = GGServerSpringContext.application.run();
 
-		GGServerSpringContext.application.setBannerMode(Banner.Mode.CONSOLE);
 		GGServerSpringContext.status = GGServerServiceStatus.running;
 	}
 
@@ -192,7 +199,7 @@ public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService
 
 	@Override
 	public String getName() {
-		return "garganttua-spring-context";
+		return "garganttua-server-spring-context";
 	}
 
 	@Override

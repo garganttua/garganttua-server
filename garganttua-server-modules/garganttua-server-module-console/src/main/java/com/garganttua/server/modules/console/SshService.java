@@ -15,7 +15,7 @@ import com.garganttua.server.core.services.GGServerServiceStatus;
 import com.garganttua.server.core.services.IGGServerService;
 
 @Service
-@ComponentScan("sshd.shell.springboot")
+@ComponentScan("org.springframework.shell.boot")
 public class SshService implements IGGServerService {
 
 	@Autowired
@@ -69,7 +69,7 @@ public class SshService implements IGGServerService {
 
 	@Override
 	public String getName() {
-		return "GARGANTTUA_SERVER-ssh-server";
+		return "garganttua-server-ssh-server";
 	}
 
 	@Override

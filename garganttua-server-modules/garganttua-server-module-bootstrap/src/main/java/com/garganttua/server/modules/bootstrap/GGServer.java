@@ -33,8 +33,6 @@ public class GGServer {
 	public static GGServerApplicationEngine engine;
 	
 	public static GGServerFolders folders = new GGServerFolders();
-	private static GGServerApplicationManifest manifest;
-	
 	private static GGServerApplicationDeploymentManager deploy;
 	
 	public static GGServerAssetManifest assetManifest;
@@ -43,6 +41,9 @@ public class GGServer {
 	
 	public static void main(String[] args) throws GGServerException, GGServerException, GGServerApplicationEngineException, IOException, ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalStateException,IllegalAccessException, GGServerApplicationDeploymentManagerException, CloneNotSupportedException, InterruptedException, GGServerServiceException, GGServerApplicationException {
 	
+		String currentDirectory = System.getProperty("user.dir");
+		log.info("Working directory " + currentDirectory);
+		
 		/*
 		 * PARSING COMMAND LINE ARGUMENTS
 		 */
@@ -103,8 +104,6 @@ public class GGServer {
 			GGServerApplicationConfiguration.configurationFileExtensions = ext;
 		}
 		
-		
-		
 		/*
 		 * PRINT BANNER 
 		 */
@@ -115,15 +114,12 @@ public class GGServer {
 			
 		}
 		
-		String currentDirectory = System.getProperty("user.dir");
-		log.info("Working directory " + currentDirectory);
-
 		log.info("Creating Java execution context");
 		
 		/*
 		 * JAVA EXECUTION CONTEXT MANAGEMENT
 		 */
-		GGServer.deploy = GGServerApplicationDeploymentManager.init(GGServerFolders.deploy, GGServer.folders.deploy);
+		GGServer.deploy = GGServerApplicationDeploymentManager.init(GGServerFolders.deploy, GGServerFolders.deploy);
 		GGServer.engine = GGServerApplicationEngine.init(GGServer.deploy, GGServerFolders.tmp);
 
 		/*
@@ -138,8 +134,8 @@ public class GGServer {
 					f.delete();
 				}
 			}
-			GGServer.engine.readFolder(GGServer.folders.conf, true, false);
-			GGServer.engine.readFolder(GGServer.folders.lib, true, false);
+			GGServer.engine.readFolder(GGServerFolders.conf, true, false);
+			GGServer.engine.readFolder(GGServerFolders.lib, true, false);
 			GGServer.engine.setLauncherClass(GGServer.launcherClass);
 			GGServer.engine.generateManifest(manifestFile);
 			return;
@@ -149,7 +145,7 @@ public class GGServer {
 		GGServerApplicationManifest applicationManifest = new GGServerApplicationManifest(manifestFile);
 
 		GGServer.engine.addManifest(applicationManifest, true);
-		GGServer.engine.readFolder(GGServer.folders.deploy, false, true);
+		GGServer.engine.readFolder(GGServerFolders.deploy, false, true);
 		
 		/*
 		 * STARTING JAVA CONTEXT

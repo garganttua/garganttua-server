@@ -6,7 +6,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.shell.standard.ShellComponent;
+import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.standard.ShellOption;
 
 import com.garganttua.server.core.deployment.artefacts.GGServerApplicationPlugin;
 import com.garganttua.server.core.deployment.artefacts.GGServerApplicationPluginInfos;
@@ -15,10 +17,7 @@ import com.garganttua.server.core.exceptions.GGServerApplicationException;
 import com.garganttua.server.core.execution.IGGServerApplicationEngine;
 import com.garganttua.server.modules.console.tables.TableUtils;
 
-import sshd.shell.springboot.autoconfiguration.SshdShellCommand;
-
-@Component
-@SshdShellCommand(value = "plugins", description = "Commands for managing plugins")
+@ShellComponent
 public class PluginsCommand {
 
 	@Autowired
@@ -27,9 +26,9 @@ public class PluginsCommand {
 	@Autowired
 	@Qualifier(value="deployFolder")
 	private String deployFolder; 
-	
-	@SshdShellCommand(value = "list", description = "")
-    public String getPluginsList(String arg) throws IOException, GGServerApplicationException {
+
+	@ShellMethod("Get plugins list")
+    public String getPluginsList() throws IOException, GGServerApplicationException {
 		
 		String[] headers = {"Name", "Version", "Status"};
 		
@@ -52,7 +51,7 @@ public class PluginsCommand {
     }
 	
 	
-	@SshdShellCommand(value = "infos", description = "Get plugin infos contained in infos.ped file")
+	@ShellMethod("Get plugin infos")
     public String getPluginInfos(String arg) throws IOException, GGServerApplicationException {
 		
 		boolean found = false;
@@ -88,7 +87,7 @@ public class PluginsCommand {
         return rend;
     }
 	
-	@SshdShellCommand(value = "undeploy", description = "Undeploy a plugin")
+	@ShellMethod("Undeploy a plugin")
     public String undeploy(String arg) throws IOException, GGServerApplicationException, GGServerApplicationDeploymentManagerException {
 		
 		boolean found = false;

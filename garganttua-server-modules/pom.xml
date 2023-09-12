@@ -13,11 +13,9 @@
   	<module>garganttua-server-module-console</module>
   	<module>garganttua-server-module-api</module>
   	<module>garganttua-server-module-security</module>
-<!--  	<module>garganttua-server-module-maven-plugin</module>-->
   	<module>garganttua-server-module-configuration</module>
-<!--  	<module>garganttua-server-module-sshd</module>-->
-<!--  	<module>garganttua-server-module-asciitable</module>-->
+  	<module>garganttua-server-module-scripts</module>
   	<module>garganttua-server-module-services</module>
-<!--  	<module>garganttua-server-module-spring-repacked</module>-->
   </modules>
+  
 </project>

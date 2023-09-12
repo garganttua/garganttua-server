@@ -5,7 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.shell.standard.ShellComponent;
+import org.springframework.shell.standard.ShellMethod;
 
 import com.garganttua.server.core.exceptions.GGServerApplicationException;
 import com.garganttua.server.core.services.GGServerServiceCommandRight;
@@ -14,10 +15,7 @@ import com.garganttua.server.core.services.IGGServerService;
 import com.garganttua.server.core.services.IGGServerServicesManager;
 import com.garganttua.server.modules.console.tables.TableUtils;
 
-import sshd.shell.springboot.autoconfiguration.SshdShellCommand;
-
-@Component
-@SshdShellCommand(value = "services", description = "Commands for managing services")
+@ShellComponent
 public class ServicesCommands {
 
 	@Autowired
@@ -27,8 +25,8 @@ public class ServicesCommands {
 	@Qualifier(value="arguments")
 	public String[] arguments;
 	
-	@SshdShellCommand(value = "list", description = "")
-    public String getServicesList(String arg) throws IOException, GGServerApplicationException {
+	@ShellMethod("Get services list")
+    public String getServicesList() throws IOException, GGServerApplicationException {
 		
 		String[] headers = {"Name", "Priority", "Status"};
 		List<IGGServerService> services = this.manager.getServices();
@@ -50,7 +48,7 @@ public class ServicesCommands {
         return rend;
     }
 	
-	@SshdShellCommand(value = "start", description = "")
+	@ShellMethod("Start a service")
     public String startService(String arg) throws IOException, GGServerApplicationException {
 		
 		List<IGGServerService> services = this.manager.getServices();
@@ -76,7 +74,7 @@ public class ServicesCommands {
         return ret;
     }
 	
-	@SshdShellCommand(value = "restart", description = "")
+	@ShellMethod("Restart a service")
     public String restartService(String arg) throws IOException, GGServerApplicationException {
 		
 		List<IGGServerService> services = this.manager.getServices();
@@ -101,7 +99,7 @@ public class ServicesCommands {
         return ret;
     }
 	
-	@SshdShellCommand(value = "stop", description = "")
+	@ShellMethod("Stop a service")
     public String stopService(String arg) throws IOException, GGServerApplicationException {
 		
 		List<IGGServerService> services = this.manager.getServices();
@@ -126,7 +124,7 @@ public class ServicesCommands {
         return ret;
     }
 	
-	@SshdShellCommand(value = "init", description = "")
+	@ShellMethod("Init a service")
     public String initService(String arg) throws IOException, GGServerApplicationException {
 		
 		List<IGGServerService> services = this.manager.getServices();
@@ -151,7 +149,7 @@ public class ServicesCommands {
         return ret;
     }
 	
-	@SshdShellCommand(value = "flush", description = "")
+	@ShellMethod("Flush a service")
     public String flushService(String arg) throws IOException, GGServerApplicationException {
 		
 		List<IGGServerService> services = this.manager.getServices();

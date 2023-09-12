@@ -1,16 +1,13 @@
 package com.garganttua.server.modules.console;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-
 /**
  *
  * @author anand
  */
-@Controller
+//@Controller
 public class MyController {
     
-    @GetMapping("/test")
+//    @GetMapping("/test")
     public String test() {
         return "test";
     }
