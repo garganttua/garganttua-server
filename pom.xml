@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.garganttua</groupId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<artifactId>garganttua-server</artifactId>
 	<packaging>pom</packaging>
 
@@ -21,6 +21,26 @@
 			<email>jeremy.colombet@garganttua.com</email>
 		</developer>
 	</developers>
+
+	<properties>
+		<com.garganttua.server.version>${project.version}</com.garganttua.server.version>
+		<com.garganttua.server.core.version>1.0.2</com.garganttua.server.core.version>
+
+		<com.garganttua.api.version>1.0.1</com.garganttua.api.version>
+		<com.garganttua.api.example.version>1.0.1-SNAPSHOT</com.garganttua.api.example.version>
+		<com.garganttua.events.version>1.1.0-SNAPSHOT</com.garganttua.events.version>
+		<com.garganttua.events.example.version>1.0.1-SNAPSHOT</com.garganttua.events.example.version>
+		<com.garganttua.server.distribution.maker.version>1.0.1</com.garganttua.server.distribution.maker.version>
+		<com.garganttua.server.plugin.maker.version>1.0.2</com.garganttua.server.plugin.maker.version>
+
+		<spring.version>3.0.5</spring.version>
+		<ssh.shell.spring.boot.starter.version>3.0.0</ssh.shell.spring.boot.starter.version>
+
+		<maven.compiler.source>18</maven.compiler.source>
+		<maven.compiler.target>18</maven.compiler.target>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -45,6 +65,22 @@
 			</snapshots>
 		</repository>
 		<repository>
+			<id>github garganttua api</id>
+			<name>github garganttua server core</name>
+			<url>https://maven.pkg.github.com/garganttua/garganttua-api</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>github garganttua events</id>
+			<name>github garganttua server core</name>
+			<url>https://maven.pkg.github.com/garganttua/garganttua-events</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
 			<id>spring release repository</id>
 			<url>https://repo.spring.io/release</url>
 			<layout>default</layout>
@@ -57,7 +93,8 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>github garganttua distribution maker</id>
-			<url>https://maven.pkg.github.com/garganttua/garganttua-server-distribution-maker</url>
+			<url>
+				https://maven.pkg.github.com/garganttua/garganttua-server-distribution-maker</url>
 			<layout>default</layout>
 			<snapshots>
 				<enabled>true</enabled>
@@ -65,56 +102,155 @@
 		</pluginRepository>
 		<pluginRepository>
 			<id>github garganttua server plugin maker</id>
-			<url>https://maven.pkg.github.com/garganttua/garganttua-server-plugin-maker</url>
+			<url>
+				https://maven.pkg.github.com/garganttua/garganttua-server-plugin-maker</url>
 			<layout>default</layout>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	
-	<properties>
-		<spring.version>3.0.5</spring.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- Garganttua Frameworks Dependencies -->
 			<dependency>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-				<version>1.18.24</version>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-api</artifactId>
+				<version>${com.garganttua.api.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua.api</groupId>
+				<artifactId>garganttua-api-example</artifactId>
+				<version>${com.garganttua.api.example.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-events</artifactId>
+				<version>${com.garganttua.events.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua.events</groupId>
+				<artifactId>garganttua-events-example</artifactId>
+				<version>${com.garganttua.events.example.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-core</artifactId>
-				<version>1.0.2-SNAPSHOT</version>
+				<version>${com.garganttua.server.core.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-distribution-maker</artifactId>
-				<version>1.0.0</version>
+				<version>${com.garganttua.server.distribution.maker.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-plugin-maker</artifactId>
+				<version>${com.garganttua.server.plugin.maker.version}</version>
+			</dependency>
+
+			<!-- Internal Dependencies -->
+			<dependency>
+				<artifactId>garganttua-server-plugin-api</artifactId>
+				<groupId>com.garganttua</groupId>
+				<version>1.0.1</version>
+				<type>ggp</type>
+			</dependency>
+
+			<dependency>
+				<artifactId>garganttua-server-plugin-api-example</artifactId>
+				<groupId>com.garganttua</groupId>
+				<version>1.0.1</version>
+				<type>ggp</type>
+			</dependency>
+
+			<dependency>
+				<artifactId>garganttua-server-plugin-events</artifactId>
+				<groupId>com.garganttua</groupId>
+				<version>1.0.1</version>
+				<type>ggp</type>
+			</dependency>
+
+			<dependency>
+				<artifactId>garganttua-server-plugin-events-example</artifactId>
+				<groupId>com.garganttua</groupId>
 				<version>1.0.0</version>
+				<type>ggp</type>
 			</dependency>
+
 			<dependency>
-				<groupId>commons-cli</groupId>
-				<artifactId>commons-cli</artifactId>
-				<version>1.5.0</version>
+				<artifactId>garganttua-server-plugin-mongodb</artifactId>
+				<groupId>com.garganttua</groupId>
+				<version>1.0.1</version>
+				<type>ggp</type>
 			</dependency>
+
 			<dependency>
-				<groupId>de.vandermeer</groupId>
-				<artifactId>asciitable</artifactId>
-				<version>0.3.2</version>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-module-security</artifactId>
+				<version>1.0.1</version>
 			</dependency>
+
 			<dependency>
-				<groupId>commons-logging</groupId>
-				<artifactId>commons-logging</artifactId>
-				<version>1.2</version>
+				<artifactId>garganttua-server-module-spring</artifactId>
+				<groupId>com.garganttua</groupId>
+				<version>1.0.1</version>
 			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-module-api</artifactId>
+				<version>1.0.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-module-bootstrap</artifactId>
+				<version>1.0.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-module-configuration</artifactId>
+				<version>1.0.1</version>
+				<type>zip</type>
+			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-module-console</artifactId>
+				<version>1.0.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-module-ggapi</artifactId>
+				<version>1.0.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-module-scripts</artifactId>
+				<version>1.0.1</version>
+				<type>zip</type>
+			</dependency>
+
+			<dependency>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-module-services</artifactId>
+				<version>1.0.1</version>
+			</dependency>
+
+			<!-- Spring Dependencies -->
+
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
@@ -122,14 +258,139 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>com.github.fonimus</groupId>
+				<artifactId>ssh-shell-spring-boot-starter</artifactId>
+				<version>${ssh.shell.spring.boot.starter.version}</version>
+			</dependency>
+
+			<!-- Other Dependencies -->
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.24</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-cli</groupId>
+				<artifactId>commons-cli</artifactId>
+				<version>1.5.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.vandermeer</groupId>
+				<artifactId>asciitable</artifactId>
+				<version>0.3.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.2</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.jline</groupId>
 				<artifactId>jline-builtins</artifactId>
 				<version>3.21.0</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+				<version>2.2.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.swagger.parser.v3</groupId>
+				<artifactId>swagger-parser-v3</artifactId>
+				<version>2.1.16</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
+
+	<dependencies>
+		<!-- Garganttua Frameworks Dependencies -->
+		<dependency>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-server-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-server-distribution-maker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-server-plugin-maker</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.garganttua.api</groupId>
+			<artifactId>garganttua-api-example</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-events</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.garganttua.events</groupId>
+			<artifactId>garganttua-events-example</artifactId>
+		</dependency>
+
+		<!-- Spring Dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.fonimus</groupId>
+			<artifactId>ssh-shell-spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- Other Dependencies -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.swagger.parser.v3</groupId>
+			<artifactId>swagger-parser-v3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.vandermeer</groupId>
+			<artifactId>asciitable</artifactId>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -137,8 +398,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>18</source>
-					<target>18</target>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -147,5 +408,6 @@
 	<modules>
 		<module>garganttua-server-bundle</module>
 		<module>garganttua-server-modules</module>
+		<module>garganttua-server-plugins</module>
 	</modules>
 </project>

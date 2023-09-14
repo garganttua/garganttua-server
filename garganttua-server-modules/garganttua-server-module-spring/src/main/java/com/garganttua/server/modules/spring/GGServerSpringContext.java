@@ -20,6 +20,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.method.HandlerTypePredicate;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
@@ -38,7 +39,7 @@ import com.garganttua.server.modules.bootstrap.GGServerFolders;
 import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
-@ComponentScan({"com.garganttua"})
+@ComponentScan({"com.garganttua","org.mongodb"})
 @Configuration
 @EnableAutoConfiguration
 @Slf4j

@@ -17,4 +17,4 @@ echo "BASH_DIR=${BASH_DIR}"
 cd ${BASH_DIR}
 cd ..
 
-java -jar bin/garganttua-server-module-bootstrap-1.0.0-SNAPSHOT.jar -manifest conf/garganttua-server-manifest.ggm -deploy deploy/ -tmp tmp/ -lib libs/ -confExt properties,ggc -banner garganttua-server-banner.txt
+java -jar bin/garganttua-server-module-bootstrap-${project.version}.jar -manifest conf/garganttua-server-manifest.ggm -deploy deploy/ -tmp tmp/ -lib libs/ -confExt properties,ggc,yml -banner garganttua-server-banner.txt

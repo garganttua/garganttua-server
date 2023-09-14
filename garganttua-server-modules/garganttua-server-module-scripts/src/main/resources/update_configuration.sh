@@ -17,4 +17,4 @@ echo "BASH_DIR=${BASH_DIR}"
 cd ${BASH_DIR}
 cd ..
 
-java -jar bin/garganttua-server-module-bootstrap-1.0.0-SNAPSHOT.jar -g -lib libs/ -conf conf/ -tmp tmp/ -manifest conf/garganttua-server-manifest.ggm -launcherClass com.garganttua.server.modules.spring.GGServerSpringContext
+java -jar bin/garganttua-server-module-bootstrap-${project.version}.jar -g -lib libs/ -conf conf/ -tmp tmp/ -manifest conf/garganttua-server-manifest.ggm -launcherClass com.garganttua.server.modules.spring.GGServerSpringContext

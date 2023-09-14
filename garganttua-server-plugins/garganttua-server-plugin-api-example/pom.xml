@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.garganttua</groupId>
+		<artifactId>garganttua-server-plugins</artifactId>
+		<version>1.0.1</version>
+	</parent>
+	<artifactId>garganttua-server-plugin-api-example</artifactId>
+	<packaging>ggp</packaging>
+	
+	<dependencies>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.garganttua</groupId>
+				<artifactId>garganttua-server-plugin-maker</artifactId>
+				<extensions>true</extensions>
+
+				<configuration>
+					<dependencies>
+						<dependency>
+							<groupId>com.garganttua.api</groupId>
+							<artifactId>garganttua-api-example</artifactId>
+							<type>included</type>
+						</dependency>
+						<dependency>
+							<groupId>com.garganttua.api</groupId>
+							<artifactId>garganttua-server-plugin-api</artifactId>
+							<type>provided</type>
+						</dependency>
+					</dependencies>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -5,10 +5,12 @@
     <artifactId>garganttua-server-modules</artifactId>
     <version>1.0.1</version>
   </parent>
-  <artifactId>garganttua-server-module-api</artifactId>
+  <artifactId>garganttua-server-module-ggapi</artifactId>
   
-  <dependencies>
-
-  </dependencies>
-  
+    <dependencies>
+		<dependency>
+			<groupId>com.garganttua</groupId>
+			<artifactId>garganttua-server-module-security</artifactId>
+		</dependency>
+	</dependencies>
 </project>

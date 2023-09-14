@@ -2,13 +2,8 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.garganttua</groupId>
-    <artifactId>garganttua-server-modules</artifactId>
+    <artifactId>garganttua-server-plugins</artifactId>
     <version>1.0.1</version>
   </parent>
-  <artifactId>garganttua-server-module-api</artifactId>
-  
-  <dependencies>
-
-  </dependencies>
-  
+  <artifactId>garganttua-server-plugin-events</artifactId>
 </project>

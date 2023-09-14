@@ -11,10 +11,12 @@
 
 	<files>
 		<file>
+			<filtered>true</filtered>
 			<source>src/main/resources/garganttua-server.properties</source>
 			<destName>garganttua-server.properties</destName>
 		</file>
 		<file>
+			<filtered>true</filtered>
 			<source>src/main/resources/garganttua-server-banner.txt</source>
 			<destName>garganttua-server-banner.txt</destName>
 		</file>
