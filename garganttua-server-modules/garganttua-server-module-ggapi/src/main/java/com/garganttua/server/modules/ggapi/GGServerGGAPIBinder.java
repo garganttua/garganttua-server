@@ -23,8 +23,6 @@ public class GGServerGGAPIBinder implements IGGServerSecurityFilter {
 		this.securityHelper.ifPresent(s -> {
 			s.configureFilterChain(null);
 		});
-
 		return http;
 	}
-
 }

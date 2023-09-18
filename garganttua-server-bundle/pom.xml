@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.garganttua</groupId>
 		<artifactId>garganttua-server</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<packaging>bundle</packaging>
 	<artifactId>garganttua-server-bundle</artifactId>
@@ -23,6 +23,21 @@
 		</dependency>
 		<dependency>
 			<artifactId>garganttua-server-plugin-mongodb</artifactId>
+			<groupId>com.garganttua</groupId>
+			<type>ggp</type>
+		</dependency>
+		<dependency>
+			<artifactId>garganttua-server-plugin-events</artifactId>
+			<groupId>com.garganttua</groupId>
+			<type>ggp</type>
+		</dependency>
+		<dependency>
+			<artifactId>garganttua-server-plugin-events-example</artifactId>
+			<groupId>com.garganttua</groupId>
+			<type>ggp</type>
+		</dependency>
+		<dependency>
+			<artifactId>garganttua-server-plugin-events-source-file-json</artifactId>
 			<groupId>com.garganttua</groupId>
 			<type>ggp</type>
 		</dependency>
@@ -81,6 +96,22 @@
 					</mainClass>
 					<dependencies>
 						<dependency>
+							<artifactId>garganttua-server-plugin-events-example</artifactId>
+							<groupId>com.garganttua</groupId>
+							<dest>deploy</dest>
+						</dependency>
+						<dependency>
+							<artifactId>
+								garganttua-server-plugin-events-source-file-json</artifactId>
+							<groupId>com.garganttua</groupId>
+							<dest>deploy</dest>
+						</dependency>
+						<dependency>
+							<groupId>com.garganttua</groupId>
+							<artifactId>garganttua-server-plugin-events</artifactId>
+							<dest>deploy</dest>
+						</dependency>
+						<dependency>
 							<groupId>com.garganttua</groupId>
 							<artifactId>garganttua-server-plugin-api</artifactId>
 							<dest>deploy</dest>
@@ -130,7 +161,7 @@
 						<dependency>
 							<groupId>com.garganttua</groupId>
 							<artifactId>garganttua-server-module-api</artifactId>
-							<dest>none</dest>
+							<dest>libs</dest>
 						</dependency>
 						<dependency>
 							<groupId>com.garganttua</groupId>

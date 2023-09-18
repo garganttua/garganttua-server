@@ -11,13 +11,13 @@ import org.springframework.stereotype.Component;
 
 import com.garganttua.server.core.execution.IGGServerApplicationEngine;
 import com.garganttua.server.core.execution.IGGServerApplicationEngineShutdownHandler;
-import com.garganttua.server.core.services.IGGServerService;
-import com.garganttua.server.core.services.IGGServerServicesManager;
 import com.garganttua.server.core.services.GGServerServiceCommandRight;
 import com.garganttua.server.core.services.GGServerServiceException;
 import com.garganttua.server.core.services.GGServerServiceExceptionLabels;
 import com.garganttua.server.core.services.GGServerServicePriority;
 import com.garganttua.server.core.services.GGServerServiceStatus;
+import com.garganttua.server.core.services.IGGServerService;
+import com.garganttua.server.core.services.IGGServerServicesManager;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -299,7 +299,16 @@ public class GGServerServicesManager implements IGGServerServicesManager, IGGSer
 		this.init(right, arguments);
 		this.start(right);
 	}
+	
+	@Override
+	public void restartService(IGGServerService service, GGServerServiceCommandRight right, String[] arguments) throws GGServerServiceException {
+		this.stopService(service, right);
+		this.flushService(service, right);
+		this.initService(service, right, arguments);
+		this.startService(service, right);
+	}
 
+	@Override
 	public void flushService(IGGServerService service, GGServerServiceCommandRight right) throws GGServerServiceException {
 		if (service.getStatus() == GGServerServiceStatus.stopped) {
 			service.flush(right);
@@ -309,7 +318,8 @@ public class GGServerServicesManager implements IGGServerServicesManager, IGGSer
 		}
 	}
 
-	private void initService(IGGServerService service, GGServerServiceCommandRight right, String[] arguments) throws GGServerServiceException {
+	@Override
+	public void initService(IGGServerService service, GGServerServiceCommandRight right, String[] arguments) throws GGServerServiceException {
 		if (service.getStatus() == GGServerServiceStatus.flushed) {
 			service.init(right, arguments==null?this.arguments:arguments);
 		} else {
@@ -318,7 +328,8 @@ public class GGServerServicesManager implements IGGServerServicesManager, IGGSer
 		}
 	}
 
-	private void startService(IGGServerService service, GGServerServiceCommandRight right) throws GGServerServiceException {
+	@Override
+	public void startService(IGGServerService service, GGServerServiceCommandRight right) throws GGServerServiceException {
 		if (service.getStatus() == GGServerServiceStatus.initialized) {
 			service.start(right);
 		} else {
@@ -327,7 +338,8 @@ public class GGServerServicesManager implements IGGServerServicesManager, IGGSer
 		}
 	}
 
-	private void stopService(IGGServerService service, GGServerServiceCommandRight right) throws GGServerServiceException {
+	@Override
+	public void stopService(IGGServerService service, GGServerServiceCommandRight right) throws GGServerServiceException {
 		if (service.getStatus() == GGServerServiceStatus.running) {
 			service.stop(right);
 		} else {

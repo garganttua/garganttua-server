@@ -182,7 +182,14 @@
 			<dependency>
 				<artifactId>garganttua-server-plugin-events-example</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.0</version>
+				<version>1.0.1</version>
+				<type>ggp</type>
+			</dependency>
+
+			<dependency>
+				<artifactId>garganttua-server-plugin-events-source-file-json</artifactId>
+				<groupId>com.garganttua</groupId>
+				<version>1.0.1</version>
 				<type>ggp</type>
 			</dependency>
 
@@ -246,6 +253,18 @@
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-services</artifactId>
+				<version>1.0.1</version>
+			</dependency>
+
+			<dependency>
+				<artifactId>garganttua-server-module-events-source-file-json</artifactId>
+				<groupId>com.garganttua</groupId>
+				<version>1.0.1</version>
+			</dependency>
+
+			<dependency>
+				<artifactId>garganttua-server-module-events</artifactId>
+				<groupId>com.garganttua</groupId>
 				<version>1.0.1</version>
 			</dependency>
 

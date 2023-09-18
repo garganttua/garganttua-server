@@ -1,6 +1,5 @@
 package com.garganttua.server.modules.console.commands;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
-import com.garganttua.server.core.exceptions.GGServerApplicationException;
 import com.garganttua.server.core.services.GGServerServiceCommandRight;
 import com.garganttua.server.core.services.GGServerServiceException;
 import com.garganttua.server.core.services.IGGServerService;
@@ -26,7 +24,7 @@ public class ServicesCommands {
 	public String[] arguments;
 	
 	@ShellMethod("Get services list")
-    public String getServicesList() throws IOException, GGServerApplicationException {
+    public String getServicesList() {
 		
 		String[] headers = {"Name", "Priority", "Status"};
 		List<IGGServerService> services = this.manager.getServices();
@@ -49,7 +47,7 @@ public class ServicesCommands {
     }
 	
 	@ShellMethod("Start a service")
-    public String startService(String arg) throws IOException, GGServerApplicationException {
+    public String startService(String arg) {
 		
 		List<IGGServerService> services = this.manager.getServices();
 		String ret = "OK";
@@ -59,7 +57,7 @@ public class ServicesCommands {
 		
 			if( arg.equals(service.getName()) ) {
 				try {
-					service.start(GGServerServiceCommandRight.user);
+					this.manager.startService(service, GGServerServiceCommandRight.user);
 				} catch (GGServerServiceException e) {
 					ret = e.getMessage();
 				}
@@ -75,7 +73,7 @@ public class ServicesCommands {
     }
 	
 	@ShellMethod("Restart a service")
-    public String restartService(String arg) throws IOException, GGServerApplicationException {
+    public String restartService(String arg) {
 		
 		List<IGGServerService> services = this.manager.getServices();
 		String ret = "OK";
@@ -85,7 +83,7 @@ public class ServicesCommands {
 		
 			if( arg.equals(service.getName()) ) {
 				try {
-					service.restart(GGServerServiceCommandRight.user, this.arguments);
+					this.manager.restartService(service, GGServerServiceCommandRight.user, null);
 				} catch (GGServerServiceException e) {
 					ret = e.getMessage();
 				}
@@ -100,7 +98,7 @@ public class ServicesCommands {
     }
 	
 	@ShellMethod("Stop a service")
-    public String stopService(String arg) throws IOException, GGServerApplicationException {
+    public String stopService(String arg) {
 		
 		List<IGGServerService> services = this.manager.getServices();
 		String ret = "OK";
@@ -110,7 +108,7 @@ public class ServicesCommands {
 		
 			if( arg.equals(service.getName()) ) {
 				try {
-					service.stop(GGServerServiceCommandRight.user);
+					this.manager.stopService(service, GGServerServiceCommandRight.user);
 				} catch (GGServerServiceException e) {
 					ret = e.getMessage();
 				}
@@ -125,7 +123,7 @@ public class ServicesCommands {
     }
 	
 	@ShellMethod("Init a service")
-    public String initService(String arg) throws IOException, GGServerApplicationException {
+    public String initService(String arg) {
 		
 		List<IGGServerService> services = this.manager.getServices();
 		String ret = "OK";
@@ -135,7 +133,7 @@ public class ServicesCommands {
 		
 			if( arg.equals(service.getName()) ) {
 				try {
-					service.init(GGServerServiceCommandRight.user, this.arguments);
+					this.manager.initService(service, GGServerServiceCommandRight.user, null);
 				} catch (GGServerServiceException e) {
 					ret = e.getMessage();
 				}
@@ -150,7 +148,7 @@ public class ServicesCommands {
     }
 	
 	@ShellMethod("Flush a service")
-    public String flushService(String arg) throws IOException, GGServerApplicationException {
+    public String flushService(String arg) {
 		
 		List<IGGServerService> services = this.manager.getServices();
 		String ret = "OK";
@@ -160,7 +158,7 @@ public class ServicesCommands {
 		
 			if( arg.equals(service.getName()) ) {
 				try {
-					service.flush(GGServerServiceCommandRight.user);
+					this.manager.flushService(service, GGServerServiceCommandRight.user);
 				} catch (GGServerServiceException e) {
 					ret = e.getMessage();
 				}

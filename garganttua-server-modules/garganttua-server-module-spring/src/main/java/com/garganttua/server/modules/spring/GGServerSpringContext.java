@@ -20,11 +20,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.method.HandlerTypePredicate;
-import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.garganttua.server.core.execution.GGServerApplicationEngine;
 import com.garganttua.server.core.execution.IGGServerApplicationEngine;
@@ -43,7 +38,7 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 @EnableAutoConfiguration
 @Slf4j
-public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService {
+public class GGServerSpringContext implements IGGServerService {
 
 	private static SpringApplication application;
 	
@@ -160,12 +155,6 @@ public class GGServerSpringContext implements WebMvcConfigurer, IGGServerService
 	public ScheduledExecutorService scheduledExecutorService() {
 		this.scheduledExecutorService = Executors.newScheduledThreadPool(this.threadPoolSize/2);
 		return this.scheduledExecutorService;
-	}
-	
-	@Override
-	public void configurePathMatch(PathMatchConfigurer configurer) {
-		WebMvcConfigurer.super.configurePathMatch(configurer);
-		configurer.addPathPrefix("api", HandlerTypePredicate.forAnnotation(RestController.class));
 	}
 	
 	/*

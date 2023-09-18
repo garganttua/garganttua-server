@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.garganttua</groupId>
     <artifactId>garganttua-server</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
   <packaging>pom</packaging>
   <artifactId>garganttua-server-plugins</artifactId>
@@ -12,5 +12,7 @@
   	<module>garganttua-server-plugin-api-example</module>
   	<module>garganttua-server-plugin-events</module>
   	<module>garganttua-server-plugin-mongodb</module>
+  	<module>garganttua-server-plugin-events-source-file-json</module>
+  	<module>garganttua-server-plugin-events-example</module>
   </modules>
 </project>
