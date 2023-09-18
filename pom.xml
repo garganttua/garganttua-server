@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.garganttua</groupId>
-	<version>1.0.1</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<artifactId>garganttua-server</artifactId>
 	<packaging>pom</packaging>
 
@@ -26,12 +26,12 @@
 		<com.garganttua.server.version>${project.version}</com.garganttua.server.version>
 		<com.garganttua.server.core.version>1.0.2</com.garganttua.server.core.version>
 
-		<com.garganttua.api.version>1.0.1</com.garganttua.api.version>
+		<com.garganttua.api.version>1.0.2-SNAPSHOT</com.garganttua.api.version>
 		<com.garganttua.api.example.version>1.0.1-SNAPSHOT</com.garganttua.api.example.version>
 		<com.garganttua.events.version>1.1.0-SNAPSHOT</com.garganttua.events.version>
 		<com.garganttua.events.example.version>1.0.1-SNAPSHOT</com.garganttua.events.example.version>
-		<com.garganttua.server.distribution.maker.version>1.0.1</com.garganttua.server.distribution.maker.version>
-		<com.garganttua.server.plugin.maker.version>1.0.2</com.garganttua.server.plugin.maker.version>
+		<com.garganttua.server.distribution.maker.version>1.0.2-SNAPSHOT</com.garganttua.server.distribution.maker.version>
+		<com.garganttua.server.plugin.maker.version>1.0.2-SNAPSHOT</com.garganttua.server.plugin.maker.version>
 
 		<spring.version>3.0.5</spring.version>
 		<ssh.shell.spring.boot.starter.version>3.0.0</ssh.shell.spring.boot.starter.version>
@@ -161,111 +161,111 @@
 			<dependency>
 				<artifactId>garganttua-server-plugin-api</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<type>ggp</type>
 			</dependency>
 
 			<dependency>
 				<artifactId>garganttua-server-plugin-api-example</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<type>ggp</type>
 			</dependency>
 
 			<dependency>
 				<artifactId>garganttua-server-plugin-events</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<type>ggp</type>
 			</dependency>
 
 			<dependency>
 				<artifactId>garganttua-server-plugin-events-example</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<type>ggp</type>
 			</dependency>
 
 			<dependency>
 				<artifactId>garganttua-server-plugin-events-source-file-json</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<type>ggp</type>
 			</dependency>
 
 			<dependency>
 				<artifactId>garganttua-server-plugin-mongodb</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<type>ggp</type>
 			</dependency>
 
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-security</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<artifactId>garganttua-server-module-spring</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-api</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-bootstrap</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-configuration</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<type>zip</type>
 			</dependency>
 
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-console</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-ggapi</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-scripts</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 				<type>zip</type>
 			</dependency>
 
 			<dependency>
 				<groupId>com.garganttua</groupId>
 				<artifactId>garganttua-server-module-services</artifactId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<artifactId>garganttua-server-module-events-source-file-json</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<artifactId>garganttua-server-module-events</artifactId>
 				<groupId>com.garganttua</groupId>
-				<version>1.0.1</version>
+				<version>1.0.0-SNAPSHOT</version>
 			</dependency>
 
 			<!-- Spring Dependencies -->
